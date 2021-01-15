@@ -2958,6 +2958,10 @@ input, select, textarea {
 			width: 100%;
 		}
 
+			.button.fit.modified {
+				margin-bottom: 1em;
+			}
+
 		input[type="submit"].small,
 		input[type="reset"].small,
 		input[type="button"].small,
