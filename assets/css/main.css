@@ -3820,6 +3820,22 @@ input, select, textarea {
 				box-shadow: inset 0 -1px 0 0 #324072, 0 1px 0 0 #324072;
 			}
 
+		.wrapper.highlight4 {
+			background-color: #2B396B;
+		}
+
+			.wrapper.highlight4:before, .wrapper.highlight4:after {
+				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%232B396B%3B' /%3E%3C/svg%3E");
+			}
+
+			.wrapper.highlight4:before {
+				box-shadow: inset 0 -1px 0 0 #2B396B, 0 1px 0 0 #2B396B;
+			}
+
+			.wrapper.highlight4:after {
+				box-shadow: inset 0 -1px 0 0 #2B396B, 0 1px 0 0 #2B396B;
+			}
+
 		.wrapper.spotlight {
 			background-color: #4c5c96;
 		}
