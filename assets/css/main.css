@@ -2638,6 +2638,17 @@ input[type="radio"]+label:before {
 	width: 100%;
 }
 
+/* Embedded Video */
+.video {
+	aspect-ratio: 16 / 9;
+	border-radius: 5px;
+	border: 0;
+	display: block;
+	margin: 0 0 2em 0;
+	position: relative;
+	width: 100%;
+}
+
 /* List */
 
 ol {
