@@ -43,22 +43,54 @@
 			<header>
 				<div class="inner">
 					<h2>Music</h2>
-					<p>Alphabetical by Title. Use ctrl/cmd + F to search. Apologies in advance.</p>
+					<div class="row">
+						<div class="col-6 col-12-small">
+							<p class="hint">Hit enter to search</p>
+							<input type="text" id="search" class="icon solid fa-search" placeholder="Search by title"
+								onkeypress="keyPressHelper(event, 'Enter', updateFilterables)" />
+						</div>
+						<div class="col-6 col-12-small">
+							<p class="hint">Click to toggle filters</p>
+							<h3 id="filters">
+								<a class="tag gray" onclick="toggleFilter(this)">Transcriptions</a>
+								<a class="tag red" onclick="toggleFilter(this)">Covers</a>
+								<a class="tag purple" onclick="toggleFilter(this)">Remixes</a>
+								<a class="tag green" onclick="toggleFilter(this)">Originals</a>
+								<a class="tag blue" onclick="toggleFilter(this)">Instrumentals</a>
+								<a class="tag yellow" onclick="toggleFilter(this)">Electronic</a>
+								<a class="tag pink" onclick="toggleFilter(this)">Vocaloids</a>
+							</h3>
+						</div>
+					</div>
+
+					<ul class="pagination">
+						<li><span class="button small disabled">Prev</span></li>
+						<li><a href="#" class="page active">1</a></li>
+						<li><a href="#" class="page">2</a></li>
+						<li><a href="#" class="page">3</a></li>
+						<li><span>&hellip;</span></li>
+						<li><a href="#" class="page">8</a></li>
+						<li><a href="#" class="page">9</a></li>
+						<li><a href="#" class="page">10</a></li>
+						<li><a href="#" class="button small">Next</a></li>
+					</ul>
+
 				</div>
 			</header>
 
 			<!-- Transcriptions -->
-			<div class="wrapper highlight">
+			<div class="wrapper">
 				<div class="inner">
 
-					<h2 class="major">Transcriptions</h2>
-
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/A_Joyful_Snowfall.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>A Joyful Snowfall</h3>
+							<h3 class="title">A Joyful Snowfall
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artist:</b> Phyrnna</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -71,12 +103,57 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Always_There.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Always There
+								<tag class="green">Original</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p><b>Lyrics:</b> MiaSanMia</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/BSxlbdVHVR8" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Always_There.pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">A Quick Daydream
+								<tag class="green">Original</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/ZxXEz4AbwOA" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/A_Quick_Daydream.pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Can't_Handle_This.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Can't Handle This</h3>
+							<h3 class="title">Can't Handle This
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano/Cello</tag>
+							</h3>
 							<p><b>Original Artist:</b> Bo Burnham</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -89,12 +166,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/ColorCode-F.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>ColorCode-F</h3>
+							<h3 class="title">ColorCode-F
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artists: </b>PIKASONIC & Felt</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -107,12 +187,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Dear_You.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Dear You</h3>
+							<h3 class="title">Dear You
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p class="no-margins"><b>Original Artist:</b> dai</p>
 							<p><b>Piano Version:</b> Phyrnna</p>
 						</div>
@@ -126,12 +209,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Dream_to_the_Future.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Dream to the Future</h3>
+							<h3 class="title">Dream to the Future
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artist:</b> HarryP (はりーP)</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -144,12 +230,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Emptiness.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Emptiness</h3>
+							<h3 class="title">Emptiness
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artist: </b>PIKASONIC</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -162,12 +251,71 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Failing to Fall
+								<tag class="green">Original</tag>
+								<tag class="yellow">Electronic</tag>
+							</h3>
+							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/OyPNfC2whpE" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Failure.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Failure
+								<tag class="green">Original</tag>
+								<tag class="yellow">Electronic</tag>
+							</h3>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/LAjJe1qLUzs" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Got Your Nose
+								<tag class="green">Original</tag>
+								<tag class="yellow">Electronic</tag>
+							</h3>
+							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/EQSwITxBGGQ" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Hano_iro_Nikki.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Hano iro Nikki</h3>
+							<h3 class="title">Hano iro Nikki
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artist:</b> Goto Saori</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -180,12 +328,35 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Happy_Birthday_;).jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Happy Birthday ;)
+								<tag class="purple">Remix</tag>
+								<tag class="yellow">Electronic</tag>
+							</h3>
+							<p class="no-margins"><b>Original Songs:</b> Happy Birthday, Never Gonna Give You Up</p>
+							<p><b>Original Artist:</b> Rick Astley</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/VhCx-w23w1U" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Hear_the_Heart_(心加心).jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Hear the Heart (心加心)</h3>
+							<h3 class="title">Hear the Heart (心加心)
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artist:</b> Atunemic</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -198,12 +369,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Heroine.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Heroine</h3>
+							<h3 class="title">Heroine
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artists:</b> PIKASONIC & nakotanmaru</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -216,12 +390,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/If_I_Die.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>If I Die</h3>
+							<h3 class="title">If I Die
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artist:</b> Phyrnna</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -234,12 +411,35 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Jasmine_Flower_(茉莉花).jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Jasmine Flower (茉莉花)
+								<tag class="red">Cover</tag>
+								<tag class="yellow">Electronic</tag>
+								<tag class="pink">Vocaloid</tag>
+							</h3>
+							<p><b>Vocals:</b> AiKo (Lite)</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/ivnWws4W1mc" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Love_Stranded.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Love Stranded</h3>
+							<h3 class="title">Love Stranded
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artist:</b> Phyrnna</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -252,12 +452,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Miracle.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Miracle</h3>
+							<h3 class="title">Miracle
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artists:</b> Reno & picco</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -270,12 +473,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Night_Glitter.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Night Glitter</h3>
+							<h3 class="title">Night Glitter
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p><b>Original Artist:</b> HachiojiP (八王子P)</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -288,12 +494,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Nostalgia.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Nostalgia</h3>
+							<h3 class="title">Nostalgia
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p class="no-margins"><b>Original Artist:</b> PIKASONIC</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -306,12 +515,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Not_All_Heroes_Where_Capes.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Not All Heroes Where Capes</h3>
+							<h3 class="title">Not All Heroes Where Capes
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p class="no-margins"><b>Original Artist:</b> Owl City</p>
 							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
 						</div>
@@ -325,12 +537,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Nothing.png" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Nothing</h3>
+							<h3 class="title">Nothing
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p class="no-margins"><b>Original Artist:</b> PIKASONIC</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -343,275 +558,15 @@
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Relive.png" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Relive</h3>
-							<p class="no-margins"><b>Original Artist:</b> PIKASONIC</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/Z4hMsmNLyeU" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Relive.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
-										Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Rising_Kingdom.png" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Rising Kingdom</h3>
-							<p class="no-margins"><b>Original Artist:</b> CaptainSparklez</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/qw0IVyuRu7Q" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Rising_Kingdom.pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet
-										Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Runaways.png" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Runaways</h3>
-							<p class="no-margins"><b>Original Artists:</b> Mihony & Stavensuniverse</p>
-							<p><b>Vocals:</b> Moon Jelly</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/8fCXLSWwhX0" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Runaways.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
-										Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Sample_of_My_Pasta.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Sample of My Pasta</h3>
-							<p class="no-margins"><b>Original Artist:</b> BTS</p>
-							<p><b>Parody Artist:</b> Bad Lip Reading</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/0Qfmh9XZIF4" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Sample_of_My_Pasta.pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Shelter.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Shelter</h3>
-							<p class="no-margins"><b>Original Artists:</b> Porter Robinson & Madeon</p>
-							<p><b>Piano Version:</b> Phyrnna</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/C4GDiln1xxM" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Shelter.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
-										Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Shine_A_Light.png" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Shine A Light (最初日)</h3>
-							<p><b>Original Artist:</b> Atunemic</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/bWFy24J9_WA" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/最初日_(Shine_A_Light).pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Sparks_Fly.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Sparks Fly</h3>
-							<p><b>Original Artist:</b> Taylor Swift</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/Jz_9Xmm5slg" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Sparks_Fly.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
-										Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/SPiCa_-_ReACT_Trance_Remix.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>SPiCa -ReACT Trance Remix</h3>
-							<p><b>Original Artist:</b> TokuP (とくP)</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/qgCDm8uP08E" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/SPiCa_-_ReACT_Trance_Remix.pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/The_Angelic_Blossom_(Trio).jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>The Angelic Blossom</h3>
-							<p><b>Original Artist:</b> Phyrnna</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/BT5eX9ITN0s" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/The_Angelic_Blossom_(Trio).pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Towards_The_Skyline.png" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Towards The Skyline 奔向天际线</h3>
-							<p><b>Original Artist:</b> Akie秋絵</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/YCHtpPkwUoA" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/奔向天际线_(Towards_the_Skyline).pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Trick.png" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Trick</h3>
-							<p><b>Original Artist:</b> PIKASONIC</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/mNoTonz9h9o" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Trick.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
-										Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Until_I_Throw_Away_My_Dreams_and_Become_an_Adult.jpg"
-									alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Until I Throw Away My Dreams and Become an Adult</h3>
-							<p><b>Original Artist:</b> Kasamura Tota (傘村トータ)</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/AOUsiW4ZYDs" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Until_I_Throw_Away_My_Dreams_and_Become_an_Adult.pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<!-- Covers & Remixes -->
-			<div class="wrapper highlight1-2 alt">
-				<div class="inner">
-
-					<h2 class="major">Covers & Remixes</h2>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Happy_Birthday_;).jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Happy Birthday ;)</h3>
-							<p class="no-margins"><b>Original Songs:</b> Happy Birthday, Never Gonna Give You Up</p>
-							<p><b>Original Artist:</b> Rick Astley</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/VhCx-w23w1U" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Jasmine_Flower_(茉莉花).jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Jasmine Flower (茉莉花)</h3>
-							<p><b>Vocals:</b> AiKo (Lite)</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/ivnWws4W1mc" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Pachelbel's_Literature_Club.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Pachelbel's Literature Club</h3>
+							<h3 class="title">Pachelbel's Literature Club
+								<tag class="purple">Remix</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 							<p class="no-margins"><b>Original Songs:</b> Doki Doki Forever, Pachelbel's Canon in D Major
 							</p>
 							<p><b>Original Artist:</b> OR3O</p>
@@ -626,121 +581,15 @@
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/You_Raise_Me_Up.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>You Raise Me Up</h3>
-							<p class="no-margins"><b>Original Artist:</b> Josh Gobran</p>
-							<p><b>Vocals:</b> Eleanor Forte (Lite)</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/twJxr_4DP5A" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<!-- Originals -->
-			<div class="wrapper">
-				<div class="inner">
-
-					<h2 class="major">Originals</h2>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>A Quick Daydream</h3>
-							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/ZxXEz4AbwOA" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/A_Quick_Daydream.pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Always_There.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Always There</h3>
-							<p><b>Lyrics:</b> MiaSanMia</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/BSxlbdVHVR8" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-								<li><a href="music/Always_There.pdf" target="_blank"
-										class="button fit small icon solid fa-download">Sheet Music</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Failing to Fall</h3>
-							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/OyPNfC2whpE" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Failure.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Failure</h3>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/LAjJe1qLUzs" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3 col-12-small">
-							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
-						</div>
-						<div class="col-6 col-12-small">
-							<h3>Got Your Nose</h3>
-							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
-						</div>
-						<div class="col-3 col-12-small">
-							<ul class="actions stacked">
-								<li><a href="https://youtu.be/EQSwITxBGGQ" target="_blank"
-										class="button fit small icon brands fa-youtube">Music Video</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Phase_Transition.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Phase Transition</h3>
+							<h3 class="title">Phase Transition
+								<tag class="green">Original</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
 						</div>
 						<div class="col-3 col-12-small">
 							<ul class="actions stacked">
@@ -752,12 +601,187 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Relive.png" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Relive
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p class="no-margins"><b>Original Artist:</b> PIKASONIC</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/Z4hMsmNLyeU" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Relive.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
+										Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Rising_Kingdom.png" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Rising Kingdom
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p class="no-margins"><b>Original Artist:</b> CaptainSparklez</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/qw0IVyuRu7Q" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Rising_Kingdom.pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet
+										Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Runaways.png" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Runaways
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p class="no-margins"><b>Original Artists:</b> Mihony & Stavensuniverse</p>
+							<p><b>Vocals:</b> Moon Jelly</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/8fCXLSWwhX0" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Runaways.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
+										Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Sample_of_My_Pasta.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Sample of My Pasta
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p class="no-margins"><b>Original Artist:</b> BTS</p>
+							<p><b>Parody Artist:</b> Bad Lip Reading</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/0Qfmh9XZIF4" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Sample_of_My_Pasta.pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Shelter.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Shelter
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p class="no-margins"><b>Original Artists:</b> Porter Robinson & Madeon</p>
+							<p><b>Piano Version:</b> Phyrnna</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/C4GDiln1xxM" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Shelter.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
+										Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Shine_A_Light.png" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Shine A Light (最初日)
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p><b>Original Artist:</b> Atunemic</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/bWFy24J9_WA" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/最初日_(Shine_A_Light).pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Sparks_Fly.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Sparks Fly
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p><b>Original Artist:</b> Taylor Swift</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/Jz_9Xmm5slg" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Sparks_Fly.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
+										Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/SPiCa_-_ReACT_Trance_Remix.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">SPiCa -ReACT Trance Remix
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p><b>Original Artist:</b> TokuP (とくP)</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/qgCDm8uP08E" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/SPiCa_-_ReACT_Trance_Remix.pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Success.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Success</h3>
+							<h3 class="title">Success
+								<tag class="green">Original</tag>
+								<tag class="yellow">Electronic</tag>
+							</h3>
 						</div>
 						<div class="col-3 col-12-small">
 							<ul class="actions stacked">
@@ -767,12 +791,100 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/The_Angelic_Blossom_(Trio).jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">The Angelic Blossom
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Quartet</tag>
+							</h3>
+							<p><b>Original Artist:</b> Phyrnna</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/BT5eX9ITN0s" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/The_Angelic_Blossom_(Trio).pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Towards_The_Skyline.png" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Towards The Skyline 奔向天际线
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p><b>Original Artist:</b> Akie秋絵</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/YCHtpPkwUoA" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/奔向天际线_(Towards_the_Skyline).pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Trick.png" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Trick
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p><b>Original Artist:</b> PIKASONIC</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/mNoTonz9h9o" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Trick.pdf" target="_blank" class="button fit small icon solid fa-download">Sheet
+										Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/Until_I_Throw_Away_My_Dreams_and_Become_an_Adult.jpg"
+									alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">Until I Throw Away My Dreams and Become an Adult
+								<tag class="gray">Transcription</tag>
+								<tag class="blue">Piano</tag>
+							</h3>
+							<p><b>Original Artist:</b> Kasamura Tota (傘村トータ)</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/AOUsiW4ZYDs" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+								<li><a href="music/Until_I_Throw_Away_My_Dreams_and_Become_an_Adult.pdf" target="_blank"
+										class="button fit small icon solid fa-download">Sheet Music</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Up and At 'em</h3>
+							<h3 class="title">Up and At 'em
+								<tag class="green">Original</tag>
+								<tag class="yellow">Electronic</tag>
+							</h3>
 							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -783,12 +895,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Up and At 'em (Music Box version)</h3>
+							<h3 class="title">Up and At 'em (Music Box version)
+								<tag class="green">Original</tag>
+								<tag class="blue">Music Box</tag>
+							</h3>
 							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -799,12 +914,15 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row filterable">
 						<div class="col-3 col-12-small">
 							<span class="image fit"><img src="music/Umbrella_Tree.jpg" alt="" /></span>
 						</div>
 						<div class="col-6 col-12-small">
-							<h3>Weeping Lilies</h3>
+							<h3 class="title">Weeping Lilies
+								<tag class="green">Original</tag>
+								<tag class="yellow">Electronic</tag>
+							</h3>
 							<p><b>Thumbnail Artist:</b> Qijia "Joy" Liu</p>
 						</div>
 						<div class="col-3 col-12-small">
@@ -814,6 +932,29 @@
 							</ul>
 						</div>
 					</div>
+
+					<div class="row filterable">
+						<div class="col-3 col-12-small">
+							<span class="image fit"><img src="music/You_Raise_Me_Up.jpg" alt="" /></span>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 class="title">You Raise Me Up
+								<tag class="red">Cover</tag>
+								<tag class="blue">Piano</tag>
+								<tag class="pink">Vocaloid</tag>
+							</h3>
+							<p class="no-margins"><b>Original Artist:</b> Josh Gobran</p>
+							<p><b>Vocals:</b> Eleanor Forte (Lite)</p>
+						</div>
+						<div class="col-3 col-12-small">
+							<ul class="actions stacked">
+								<li><a href="https://youtu.be/twJxr_4DP5A" target="_blank"
+										class="button fit small icon brands fa-youtube">Music Video</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<ul class="pagination"></ul>
 
 				</div>
 			</div>
@@ -878,17 +1019,9 @@
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
+	<script src="../assets/js/helpers.js"></script>
 	<script>
-		function copy(text) {
-			const type = "text/plain";
-			const blob = new Blob([text], { type })
-			let data = [new ClipboardItem({ [type]: blob })];
-
-			navigator.clipboard.write(data).then(function () {
-			}, function (err) {
-				console.log(err);
-			});
-		}
+		updateFilterables();
 	</script>
 
 </body>

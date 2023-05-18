@@ -154,18 +154,7 @@
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
-	<script>
-		function copy(text) {
-			const type = "text/plain";
-			const blob = new Blob([text], { type })
-			let data = [new ClipboardItem({ [type]: blob })];
-
-			navigator.clipboard.write(data).then(function () {
-			}, function (err) {
-				console.log(err);
-			});
-		}
-	</script>
+	<script src="../assets/js/helpers.js"></script>
 
 </body>
 

@@ -53,10 +53,10 @@
 
 					<section class="features">
 						<article>
-							<a href="projects/minecraft.html" class="image"><img src="images/laptop.jpg" alt="" /></a>
-							<h3 class="major">Minecraft Plugins</h3>
-							<p>A list of server-side plugins written in Java to enhance Minecraft gameplay.</p>
-							<a href="projects/minecraft.html" class="special">Learn more</a>
+							<a href="projects/softwareProjects.html" class="image"><img src="images/laptop.jpg" alt="" /></a>
+							<h3 class="major">Software Projects</h3>
+							<p>A list of software projects in various languages and at various stages of completion.</p>
+							<a href="projects/softwareProjects.html" class="special">Learn more</a>
 						</article>
 						<article>
 							<a href="projects/music.html" class="image"><img src="images/keys.jpg" alt="" /></a>
@@ -143,18 +143,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script>
-		function copy(text) {
-			const type = "text/plain";
-			const blob = new Blob([text], { type })
-			let data = [new ClipboardItem({ [type]: blob })];
-
-			navigator.clipboard.write(data).then(function () {
-			}, function (err) {
-				console.log(err);
-			});
-		}
-	</script>
+	<script src="../assets/js/helpers.js"></script>
 
 </body>
 
