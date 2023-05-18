@@ -45,13 +45,13 @@
 					<h2>Music</h2>
 					<div class="row">
 						<div class="col-6 col-12-small">
-							<p class="hint">Hit enter to search</p>
+							<p class="hint">Hit enter/return to search</p>
 							<input type="text" id="search" class="icon solid fa-search" placeholder="Search by title"
 								onkeypress="keyPressHelper(event, 'Enter', updateFilterables)" />
 						</div>
 						<div class="col-6 col-12-small">
 							<p class="hint">Click to toggle filters</p>
-							<h3 id="filters">
+							<h3 id="filters" class="disable-select">
 								<a class="tag gray" onclick="toggleFilter(this)">Transcriptions</a>
 								<a class="tag red" onclick="toggleFilter(this)">Covers</a>
 								<a class="tag purple" onclick="toggleFilter(this)">Remixes</a>

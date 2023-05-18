@@ -520,6 +520,12 @@ hr.major {
 	margin: 0;
 }
 
+.disable-select {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
 /* Row */
 
 .row {
@@ -2901,6 +2907,9 @@ ul.pagination li>.page {
 	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 	border-bottom: 0;
 	border-radius: 5px;
 	display: inline-block;
@@ -3029,6 +3038,9 @@ tag,
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 	background-color: transparent;
 	border-radius: 0.8em;
 	border: 0;
@@ -3123,6 +3135,9 @@ button,
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 	-moz-transition: background-color 0.2s ease-in-out;
 	-webkit-transition: background-color 0.2s ease-in-out;
 	-ms-transition: background-color 0.2s ease-in-out;
